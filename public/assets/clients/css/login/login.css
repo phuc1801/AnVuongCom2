@@ -1,0 +1,52 @@
+    body::before {
+        background: url('/assets/clients/media/images/nen.jpg') center center / cover no-repeat, #000;
+    }
+    .another-login-type{
+        margin-top: 20px;
+    }
+    .another-login-type-child{
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+        column-gap: 5px;
+    }
+    .title-another-login-type{
+        height: 1px;
+        background-color: #000;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+    }
+    .middle-title-another-login-type{
+        color: white;
+    }
+    .gg-login{
+        width: 100%;
+        margin-top: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+        transition: background-color 1s;
+    }
+    .gg-login-a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+        text-decoration: none !important;
+    }
+    .gg-login img{
+        width: 25px;
+        height: 24px;
+        margin-right: 7px;
+    }
+    .gg-login:hover{
+        background-color: lightgray;
+        cursor: pointer;
+    }
+    .toggle-password{
+        border: 1px solid white;
+        border-radius: 50%;
+    }

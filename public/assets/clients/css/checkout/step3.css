@@ -1,0 +1,176 @@
+    .details {
+        margin-bottom: 15px;
+    }
+
+    .details h2 {
+        margin-bottom: 10px;
+    }
+
+    .details div {
+        margin: 5px 0;
+    }
+
+    .details strong {
+        font-weight: bold;
+    }
+
+    .red {
+        color: #e60000;
+        font-weight: bold;
+    }
+
+    .info-row {
+        margin: 5px 0;
+    }
+
+    .product-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .product-table th,
+    .product-table td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    .product-table th {
+        background-color: #f8f8f8;
+        font-weight: 600;
+    }
+
+    .product-table tr:nth-child(even) {
+        background-color: #fafafa;
+    }
+
+    /* Phương thức thanh toán */
+
+    .payment-options {
+        margin-top: 15px;
+    }
+
+    .payment-options h3 {
+        margin-bottom: 15px;
+    }
+
+    .payment-option {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .payment-option input {
+        margin-right: 8px;
+    }
+
+    .payment-option img {
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    .payment-details {
+        margin-top: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .payment-details img.qr-code {
+        width: 150px;
+        height: 150px;
+        margin: 10px 0;
+    }
+
+    .payment-details p {
+        margin: 5px 0;
+    }
+
+    .summary {
+        margin-top: 15px;
+        padding-top: 15px;
+    }
+
+    .summary div {
+        margin: 5px 0;
+    }
+
+    .summary strong {
+        display: inline-block;
+        min-width: 140px;
+    }
+
+    .total {
+        font-size: 20px;
+        font-weight: bold;
+        color: #e60000;
+    }
+
+    .btn-submit {
+        background-color: #e60000;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .btn-submit:hover {
+        background-color: #cc0000;
+    }
+
+    /* countdown */
+    .order-timer {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .countdown-timer {
+        display: inline-block;
+        background: #28a745;
+        /* xanh lúc còn nhiều */
+        color: #fff;
+        font-weight: bold;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 1rem;
+        min-width: 60px;
+        text-align: center;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .countdown-timer.warning {
+        background: #ffc107;
+        /* vàng khi gần hết */
+        color: #000;
+        animation: blink 1s infinite;
+    }
+
+    .countdown-timer.expired {
+        background: #dc3545;
+        /* đỏ khi hết hạn */
+        color: #fff;
+    }
+
+    @keyframes blink {
+
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+
+        25%,
+        75% {
+            opacity: 0.5;
+        }
+    }

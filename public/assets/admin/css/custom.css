@@ -1,0 +1,81 @@
+.custom-file-upload{
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.custom-file-upload:hover{
+    background-color: blue;
+}
+
+.cant-see-image{
+    display: none;
+}
+
+.image-preview{
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid cornflowerblue;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.image-preview-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.image-preview-container img {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+/* riêng cho mấy thằng mô tả đỡ dài */
+.truncate-text{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+}
+/* order */
+.card {
+    border-radius: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.card i {
+    width: 40px;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+#datatable-buttons td, #datatable-buttons th{
+    vertical-align: middle !important;
+}
+
+/* top navigation message */
+.message {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* product attribute */
+.flowToy{
+    overflow-y: auto;
+    max-height: 700px;
+}

@@ -1,0 +1,11 @@
+.read-more{
+    display: block;
+    position: absolute;
+    color: black;
+    width: 100%;
+    border: none;
+    color: #0186e7;
+    text-align: center;
+    background-color: transparent;
+    bottom: -12px;
+}

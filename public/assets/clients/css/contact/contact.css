@@ -1,0 +1,95 @@
+    /* Khung form */
+    .form-container {
+        width: 450px;
+        padding: 30px;
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Tiêu đề */
+    h2 {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 20px;
+        color: #222;
+    }
+
+    /* Label */
+    label {
+        font-weight: 600;
+        display: block;
+        margin: 12px 0 6px;
+        color: #333;
+    }
+
+    /* Input + Select + Textarea */
+    select,
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        outline: none;
+        font-size: 14px;
+        background: #f9f9f9;
+        transition: all 0.3s ease;
+    }
+
+    select:focus,
+    input:focus,
+    textarea:focus {
+        border-color: #007bff;
+        background: #fff;
+        box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    }
+
+    /* Textarea */
+    textarea {
+        min-height: 120px;
+        resize: none;
+    }
+
+    /* Hàng ngang */
+    .contact-row.row {
+        display: flex;
+        gap: 15px;
+    }
+
+    .contact-col.col {
+        flex: 1;
+    }
+
+    /* Nút bấm */
+    button {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, #007bff, #0056b3);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: transform 0.2s ease, background 0.3s ease;
+    }
+
+    button:hover {
+        background: linear-gradient(135deg, #0056b3, #003d80);
+        transform: translateY(-2px);
+    }

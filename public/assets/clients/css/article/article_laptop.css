@@ -1,0 +1,44 @@
+.div-text-wrapper-div{
+    background-color: white;
+    padding-bottom: 20px;
+}
+.text-wrapper-div{
+    position: relative;
+}
+.text-decoration{
+    position: relative;
+    padding: 0 10px;
+    max-height: 120px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.text-decoration.show-more{
+    max-height: fit-content;
+}
+.read-more{
+    display: block;
+    position: absolute;
+    color: black;
+    width: 100%;
+    border: none;
+    color: #0186e7;
+    text-align: center;
+    background-color: transparent;
+    bottom: -12px;
+}
+.text-decoration::after{
+    content: '';
+    height: 70px;
+    background: linear-gradient(to bottom, transparent, white 90%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.text-decoration.show-more::after{
+    height: 0;
+}
+.title-para{
+    color: blue;
+    text-align: center;
+}

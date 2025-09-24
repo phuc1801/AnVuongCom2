@@ -1,0 +1,72 @@
+.container-child {
+  width: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.tab.active {
+  background: #4a6cff;
+  color: #fff;
+}
+
+.tab:not(.active) {
+  background: #f2f2f2;
+  color: #333;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: block;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.btn {
+  display: inline-block;
+  background: #1677ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #0f5bd7;
+}
+
+.captcha {
+  margin: 15px 0;
+}

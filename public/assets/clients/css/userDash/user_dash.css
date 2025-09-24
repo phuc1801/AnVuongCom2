@@ -1,0 +1,112 @@
+    /* ====== SIDEBAR MENU ====== */
+    .nav-item-section {
+        margin: 10px 0px 5px 0px;
+    }
+
+    .sidebar .nav-link-section {
+        display: block;
+        padding: 12px 16px;
+        /* rộng hơn mặc định */
+        border-radius: 8px;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .sidebar .nav-link-section:hover {
+        background-color: #ff4d4d;
+        color: #fff !important;
+        transform: translateX(4px);
+    }
+
+    .sidebar a.active {
+        background-color: #ff0000;
+        color: #fff !important;
+    }
+
+    /* ====== CONTENT SECTION ====== */
+    .content-section {
+        display: none;
+    }
+
+    .active-section {
+        display: block;
+    }
+
+    .tab-not-show {
+        display: none;
+    }
+
+    .active-tab {
+        display: block;
+    }
+
+    /* Tiêu đề gọn gàng hơn */
+    .content-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    /* ====== FORM STYLE ====== */
+    .address-form {
+        max-width: 500px;
+        margin-top: 20px;
+    }
+
+    .dob-selects {
+        display: flex;
+        gap: 10px;
+    }
+
+    .dob-selects select {
+        flex: 1;
+    }
+
+    /* ====== MODAL STYLE ====== */
+    .modal-content {
+        border-radius: 10px;
+    }
+
+    .modal-header {
+        border-bottom: none;
+    }
+
+    .modal-footer {
+        border-top: none;
+        justify-content: center;
+    }
+
+    /* ====== BUTTONS ====== */
+    .btn-custom {
+        padding: 10px 20px;
+        border-radius: 6px;
+        background-color: #ff0000;
+        color: #fff;
+        border: none;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    .btn-custom:hover {
+        background-color: #cc0000;
+    }
+
+    .btn-cancel {
+        background-color: #d3d3d3;
+        color: #000;
+    }
+
+    .btn-cancel:hover {
+        background-color: #b0b0b0;
+    }
+
+    /* Button trong form chiếm full width */
+    .address-form button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #ratingStars .star{
+        cursor: pointer;
+        font-size: 30px;
+    }
