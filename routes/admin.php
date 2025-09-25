@@ -123,5 +123,16 @@ Route::prefix('admin')->group(function () {
         Route::post('/attribute_category/add-new', [AttributeCategoryController::class, 'addNewAttributeCategory'])->name('admin.attribute_category-addNew');
         Route::post('/attribute_category/update-old', [AttributeCategoryController::class, 'updateOldAttributeCategory']);
         Route::post('/attribute_category/delete-old', [AttributeCategoryController::class, 'deleteOldAttributeCategory']);
+
+        // Test
+
+        Route::get('/test', [ArticleController::class, 'returnTest'])->name('admin.test');
+        Route::get('/test_add', [ArticleController::class, 'showAddTest'])->name('admin.test_add');
+        Route::post('/test_add', [ArticleController::class, 'addNewArticle'])->name('admin.test_add_new');
+
+        Route::post('/article/delete-old2', [ArticleController::class, 'deleteOldArticle'])
+        ->name('article.delete');
+
+
     });
 });

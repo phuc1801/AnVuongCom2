@@ -12,112 +12,112 @@ use Intervention\Image\Facades\Image;
 
 class ArticleController extends Controller
 {
+    public function getListArticle(){
+        return Article::with('user')->get();
+    }
+    public function returnBlade(){
+        $articles = $this->getListArticle();
+        return view('admin.pages.articles', compact('articles'));
+    }
 
-    public function addNewArticle(Request $request)
-    {
+    public function addNewArticle(Request $request){
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'nullable|string',
-            'images' => 'required|array',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'type' => 'required|in:true,false',
+            'title' => 'required',
+            'content' => 'required|min:3|max:255',
+            'type' => 'required|in:true,false'
+        ], [
+            'title.required' => 'Khong duoc de trong tieu de',
+            'content.required' => 'Khong duoc de trong content',
+            'type.required' => 'Khong duoc de trong'
         ]);
-
         $id = Auth::guard('admin')->id();
-
-        $article = Article::create([
+        $articles = Article::create([
             'title' => $request->input('title'),
             'content' => $request->input('content'),
             'type' => $request->boolean('type'),
-            'user_id' => $id,
+            'user_id' => $id
         ]);
 
-        if ($request->hasFile('images')) {
+        if($request->hasFile('images')){
             $images = [];
-            foreach ($request->file('images') as $index => $image) {
+            foreach($request->file('images') as $index => $image){
                 $imageName = time() . '_' . uniqid() . '.' . $image->getClientOriginalExtension();
                 $path = 'img/articles/' . $imageName;
                 $resizedImage = Image::make($image)->orientate()->resize(600, 600)->encode();
                 Storage::disk('public')->put($path, $resizedImage);
-
                 ArticleImage::create([
-                    'article_id' => $article->id,
-                    'image' => $imageName,
+                    'article_id' => $articles->id,
+                    'image' => $imageName
                 ]);
             }
         }
-
-        return redirect()->route('admin.article-add')->with('success', 'Danh mục đã thêm thành công!');
+        return redirect()->route('admin.article-add')->with('success', 'Them thanh cong');
     }
 
-    public function updateOldArticle(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'nullable|string',
-            'type' => 'required|in:true,false',
-        ]);
-        try {
+    public function updateOldArticle(Request $request){
+        try{
             $article = Article::findOrFail($request->article_id);
-            if (!$article) {
+            if(!$article){
                 return response()->json([
                     'success' => false,
-                    'message' => 'Không tìm thấy bài viết phù hợp!'
-                ]);
-            } else {
-                $article->title = $request->title;
-                $article->content = $request->content;
-                $article->type = $request->boolean('type');
-                $article->save();
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Đã cập nhật thành công',
-
+                    'message' => 'Khong tim thay ban ghi'
                 ]);
             }
-        } catch (\Throwable $th) {
+            $article->title = $request->title;
+            $article->content = $request->content;
+            $article->type = $request->boolean('type');
+            $article->save();
+            return response()->json([
+                'success' => true,
+                'message' => 'Sua thanh cong'
+            ]);
+        }catch(\Throwable $th){
             return response()->json([
                 'success' => false,
-                'message' => 'Lỗi lòi mắt rồi homie!'
+                'message' => 'Loi try Catch'
             ]);
         }
     }
 
-    public function deleteOldArticle(Request $request)
-    {
-        try {
+    public function deleteOldArticle(Request $request){
+        try{
             $article = Article::findOrFail($request->article_id);
-            if (!$article) {
+            if(!$article){
                 return response()->json([
                     'success' => false,
-                    'message' => 'Không tìm thấy bài viết phù hợp!'
-                ]);
-            } else {
-                $images = ArticleImage::where('article_id', $article->id)->get();
-                foreach ($images as $image)
-                    Storage::disk('public')->delete('img/articles/' . $image->image);
-                $article->delete();
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Đã xóa thành công'
+                    'message' => 'Ban ghi khong ton'
                 ]);
             }
-        } catch (\Throwable $th) {
+            $images = ArticleImage::where('article_id', $article->id)->get();
+            foreach($images as $image){
+                Storage::disk('public')->delete('img/articles/' . $image->image);
+            }
+            $article->delete();
             return response()->json([
-                'success' => false,
-                'message' => 'Lỗi lòi mắt rồi homie!'
+                'success' => true,
+                'message' => 'Xoa thanh cong'
+            ]);
+
+        }catch(\Throwable $th){
+            return response()->json([
+                    'success' => false,
+                    'message' => 'loi try catch'
             ]);
         }
     }
 
-    public function showFormArticle()
-    {
+
+
+    public function showFormArticle(){
         return view('admin.pages.article_add');
     }
 
-    public function returnBlade()
-    {
-        $articles = Article::with('user')->get();
-        return view('admin.pages.articles', compact('articles'));
+    public function returnTest(){
+        $articles = $this->getListArticle();
+        return view('admin.pages.test', compact('articles'));
+    }
+
+    public function showAddTest(){
+        return view('admin.pages.test_add');
     }
 }
