@@ -31,6 +31,7 @@
         rel="stylesheet">
     <link href="{{ asset('assets/admin/build/css/custom.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/test.css') }}">
 </head>
 
 <body class="nav-md">

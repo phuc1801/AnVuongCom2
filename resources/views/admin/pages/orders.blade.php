@@ -163,7 +163,7 @@
                                                         <td style="text-align: center" class="order-status">
                                                             @switch($order->status)
                                                                 @case('pending')
-                                                                    <span class="badge badge-warning badge-pill p-2">
+                                                                    <span class="badge badge-warning badge-pill p-2" style="background-color: green;">
                                                                         <i class="fa fa-clock-o mr-1"></i>Đang chờ
                                                                     </span>
                                                                 @break

@@ -2,45 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Example DataTables Search</title>
+    <!-- CSS DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- JS DataTables -->
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-    <table class="table">
-        <h1>Quản lý bài viết</h1>
-        <p>Số lượng bài viết: {{$articles->count()}}</p>
-        <a href="{{route('admin.test_add')}}">Thêm</a>
-        <thead>
-            <tr>
-                <th scope="col">Tiêu đề</th>
-                <th scope="col">Nội dung</th>
-                <th scope="col">Loại</th>
-                <th>Hoạt động</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($articles as $article)
-            <tr>
-                
-                <th>{{$article->title}}</th>
-                <th>{{$article->content}}</th>
-                <th>{{$article->type}}</th>
-                <th>
-                    <a href="">Sửa</a>
-                    <form action="{{ route('article.delete') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="article_id" value="{{ $article->id }}">
-                        <button type="submit" class="btn btn-danger">Xóa</button>
-                    </form>
 
+<h2>Danh sách ảnh</h2>
+<table id="example-table" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên ảnh</th>
+            <th>Loại</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Banner 1</td><td>slide</td></tr>
+        <tr><td>2</td><td>Banner 2</td><td>banner</td></tr>
+        <tr><td>3</td><td>Logo</td><td>logo</td></tr>
+        <tr><td>4</td><td>Slide 1</td><td>slide</td></tr>
+    </tbody>
+</table>
 
-                </th>
-               
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+<script>
+$(document).ready(function() {
+    // Khởi tạo DataTables
+    $('#example-table').DataTable();
+});
+</script>
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

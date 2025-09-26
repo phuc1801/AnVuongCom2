@@ -1,0 +1,23 @@
+.my-box {
+  width: 300px;           /* chiều rộng */
+  height: 200px;          /* chiều cao */
+  background-color: #4caf50; /* màu nền */
+  color: white;           /* màu chữ */
+  font-size: 18px;        /* kích thước chữ */
+  font-weight: bold;      /* in đậm */
+  text-align: center;     /* căn giữa chữ ngang */
+  line-height: 200px;     /* căn giữa chữ dọc */
+  border: 2px solid #333; /* viền */
+  border-radius: 12px;    /* bo góc */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* đổ bóng */
+  transition: all 0.3s ease; /* hiệu ứng hover mượt */
+}
+
+.my-box:hover {
+  background-color: #45a049; /* đổi màu khi hover */
+  transform: scale(1.05);   /* phóng to nhẹ */
+}
+
+.my-color{
+    color: red !important;
+}
